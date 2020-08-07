@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1058393031443",
+    "firebase_url": "https://auth-practice-5bc73.firebaseio.com",
+    "project_id": "auth-practice-5bc73",
+    "storage_bucket": "auth-practice-5bc73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058393031443:android:9f6fd86697d34cfd4510e6",
+        "android_client_info": {
+          "package_name": "com.example.auth_practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058393031443-341h5vq1pse94smossug9q7itd6olhjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi3jX7tgHGEB58_v-a3xORwehV_gbS7RU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058393031443-341h5vq1pse94smossug9q7itd6olhjq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
