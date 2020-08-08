@@ -133,12 +133,6 @@ class _AuthFormState extends State<AuthForm> {
                               child: Text('$role'),
                             );
                           }).toList(),
-                          // validator: (value) {
-                          //   if (value.isEmpty) {
-                          //     return 'Please enter a valid strength';
-                          //   }
-                          //   return 'user';
-                          // },
                           onChanged: (value) => setState(() => _role = value)),
                     ),
                     SizedBox(width: 10.0),
@@ -152,12 +146,6 @@ class _AuthFormState extends State<AuthForm> {
                             child: Text('$strength points'),
                           );
                         }).toList(),
-                        // validator: (value) {
-                        //   if (value.isEmpty) {
-                        //     return 'Please enter a valid strength';
-                        //   }
-                        //   return '50';
-                        // },
                         onChanged: (value) => setState(() => _strength = value),
                       ),
                     ),

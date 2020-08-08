@@ -1,4 +1,5 @@
 import 'package:auth_practice/model/user.dart';
+import 'package:auth_practice/screens/editProfile.dart';
 import 'package:auth_practice/services/authservice.dart';
 import 'package:auth_practice/services/database.dart';
 import 'package:auth_practice/widgets/authform.dart';
@@ -83,7 +84,7 @@ class ProfilePage extends StatelessWidget {
                           onPressed: () {
                             showModalBottomSheet(
                               context: context,
-                              builder: (context) => AuthForm(),
+                              builder: (context) => EditProgile(),
                             );
                           },
                         )
