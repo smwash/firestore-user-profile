@@ -1,9 +1,9 @@
 import 'package:auth_practice/constants.dart';
-import 'package:auth_practice/model/user.dart';
+
 import 'package:auth_practice/services/authservice.dart';
-import 'package:auth_practice/services/database.dart';
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class AuthForm extends StatefulWidget {
   @override
@@ -13,6 +13,7 @@ class AuthForm extends StatefulWidget {
 class _AuthFormState extends State<AuthForm> {
   final _formKey = GlobalKey<FormState>();
   bool _isLogin = true;
+
   bool _obscureText = true;
   String _username;
   String _userEmail;
@@ -197,9 +198,75 @@ class _AuthFormState extends State<AuthForm> {
                   ),
                 ],
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Divider(
+                    color: Colors.red,
+                    thickness: 10,
+                    height: 10.0,
+                  ),
+                  Text('Or'),
+                  Divider(
+                    color: Colors.black,
+                    thickness: 2,
+                  ),
+                ],
+              ),
+              Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialButtons(
+                    icon: MdiIcons.google,
+                    onPress: () => AuthService().googleSignIn(),
+                  ),
+                  SocialButtons(icon: MdiIcons.facebook),
+                ],
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SocialButtons extends StatelessWidget {
+  SocialButtons({
+    @required this.icon,
+    this.onPress,
+  });
+
+  final IconData icon;
+  final Function onPress;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.0),
+      margin: EdgeInsets.only(right: 10.0),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Row(
+        children: [
+          IconButton(
+            icon: Icon(
+              icon,
+              size: 30.0,
+              color: Colors.white,
+            ),
+            onPressed: onPress,
+          ),
+          Text(
+            'SignIn',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
     );
   }
