@@ -2,7 +2,7 @@ import 'package:auth_practice/model/user.dart';
 import 'package:auth_practice/screens/editProfile.dart';
 import 'package:auth_practice/services/authservice.dart';
 import 'package:auth_practice/services/database.dart';
-import 'package:auth_practice/widgets/authform.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,12 +13,16 @@ class ProfilePage extends StatelessWidget {
 
     final _auth = AuthService();
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        brightness: Brightness.dark,
+        title: Text('ProfileScreen'),
+      ),
       body: Center(
         child: Column(
           children: [
             Container(
               padding: EdgeInsets.all(20.0),
+              margin: EdgeInsets.all(20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20.0),
@@ -30,7 +34,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ],
               ),
-              child: StreamBuilder(
+              child: StreamBuilder<UserData>(
                   stream: Database().getUserData(user.userId),
                   builder: (context, snapshot) {
                     if (!snapshot.hasData) {
